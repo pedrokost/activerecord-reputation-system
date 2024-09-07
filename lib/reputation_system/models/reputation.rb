@@ -31,7 +31,7 @@ module ReputationSystem
 
     validates_uniqueness_of :reputation_name, :scope => [:target_id, :target_type]
 
-    serialize :data, Hash
+    serialize :data
 
     def self.find_by_reputation_name_and_target(reputation_name, target)
       target_type = get_target_type_for_sti(target, reputation_name)
